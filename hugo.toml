@@ -1,4 +1,4 @@
-baseURL = '/songphonr.gitlab.io/test-doc/'
+baseURL = '//songphonr.gitlab.io/test-doc/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 
