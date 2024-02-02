@@ -1,8 +1,39 @@
 +++
-title = 'Documentation for Satellite-Based Biomass/Canopy Height Estimation Model​'
+title = 'Satellite-Based AGB/CHM Estimation Model​'
 date = 2024-02-02T13:53:11+07:00
 +++
 
-Documentation for all relevant information about project. <br>
-![concept](../assets/img/concept.png)
-A DEEP LEARNING APPROACH WITH UNCERTAINTY ESTIMATION TO ASSESSMENT THE POTENTIAL OF ABOVEGROUND BIOMASS MAPPING OF TROPICAL RAINFOREST IN THAILAND Test
+## Overview. 
+
+![concept](/concept.png)
+
+
+This project is an UNET probabilistic deep learning model for estimating forest structure data such as canopy height/above ground biomass from satellite-based data such as sentinel 1 , sentinel 2 and GEDI data. 
+
+Here you can find all relevant information about this project.
+
+-----------------
+
+### First-timer
+If you don't have any clue about this project , go through  [Theorem](/Theorem/) section to look for brief overview of the project<br> 
+
+It will guide you from background and details literature , methodology such as
+
+- Problem assetment of the project
+- Biomass / Aboveground Biomass definition
+- Remote Sensing process
+- Model Methodology
+
+
+-----------------
+
+## Dev/ML
+ Explore [Data](/Data/)  and [Model](/Model/)  section for implementation detail of the project
+
+-----------------
+
+## User 
+- [Prediction](/Prediction/)  Section will walk through step-by-step how to use model to produce outcome
+- [Application](/Application/)  Section descibe how to apply the output prediction and get correct result
+
+-----------------
