@@ -22,5 +22,10 @@ weight = 1
 ![forestinv2](/forestinv2.png?classes=inline)
 
 
+Currently, the standard method for measuring carbon stock is measuring trees in random small areas of the forest, called sample plots to measure the growth of the tree's diameter and height, Then carbon stock can be calculate using allometric equations (more details in [Biomass](/Theorem/Biomass) section)
 
+While the advantage of this method the output produce very high accuracy and resolution, it's requiring a lot of human resources, time, and expenses. Affects the cost and duration of assessments if we want to scale in large areas.
 
+Remote sensing technology using satellite imagery, on the other hand suitable for surveying the geography and scaling for a large areas in a short period of time with high revisiting fequency.
+
+![sen2](/sen2.png)

@@ -14,6 +14,14 @@ Here you can find all relevant information about this project.
 
 -----------------
 
+### Prerequisites
+
+Some background in **geospatial data analysis** is require to work through the project.
+
+[PyGIS](https://pygis.io/docs/a_intro.html)  - Open Source Spatial Programming & Remote Sensing will introduce you to the methods required for spatial programming and make you getting familiar with concept like raster, vector, coordinate reference systems
+
+------
+
 ### First-timer
 If you don't have any clue about this project , go through  [Theorem](/Theorem/) section to look for brief overview of the project<br> 
 
