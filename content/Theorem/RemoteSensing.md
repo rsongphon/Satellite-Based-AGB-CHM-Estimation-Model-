@@ -32,7 +32,7 @@ Sensors, or instruments, aboard satellites and aircraft use the Sun as a source 
 ![activepassive](/activepassive.png)
 Diagram of a passive sensor versus an active sensor. Credit: NASA Applied Sciences Remote Sensing Training Program.
 
-
+#### Passive sensor
 - Most **passive systems** used by remote sensing applications operate in the visible, infrared, thermal infrared, and microwave portions of the electromagnetic spectrum. 
 These sensors measure land and sea surface temperature, vegetation properties, cloud and aerosol properties, and other physical attributes. 
 
@@ -40,8 +40,31 @@ These sensors measure land and sea surface temperature, vegetation properties, c
 Most **passive sensors** cannot penetrate dense cloud cover and thus have limitations observing areas like the tropics where dense cloud cover is frequent.
 {{% /notice %}}
 
+- Example of passive sensor
+1. Infrared radiation, which can detect heat or thermal radiation from objects or sources; ​
+
+2. **Visible radiation, which can capture images or colors of objects or scenes;**​
+
+3. Ultraviolet radiation, which can reveal hidden or fluorescent features or substances; ​
+
+4. Temperature sensors that can measure the heat or coldness of objects or environments; sound sensors that can pick up vibrations or noises from objects or sources; and ​
+
+5. Magnetic sensors that can measure the strength or direction of magnetic fields or forces.
+
+##### Active sensor
 - The majority of **active sensors** operate in the microwave band of the electromagnetic spectrum, which gives them the ability to **penetrate the atmosphere under most conditions.** These types of sensors are useful for measuring the vertical profiles of aerosols, forest structure, precipitation and winds, sea surface topography, and ice, among others.
 
+- Example of active sensor
+
+1. Radio waves to detect and track objects in the air, on the ground, or at sea. ​
+
+2. **Lidar (Light Detection and Ranging) utilizes laser pulses to measure distance and create high-resolution maps of the surface or the atmosphere.**
+
+3. Sonar (Sound Navigation and Ranging) relies on sound waves to locate and identify underwater objects or features. ​
+
+4. Ultrasound employs ultrasonic waves that can penetrate through solid or liquid materials and produce images or measurements of the internal structure or condition.​
+
+​
 
 #### Resolution
 Resolution can vary depending on the satellite’s orbit and sensor design. There are four types of resolution to consider for any dataset—radiometric, spatial, spectral, and temporal.
