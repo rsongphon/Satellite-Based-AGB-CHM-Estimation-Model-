@@ -15,7 +15,7 @@ With 6 days repeat cycle on the entire world and daily acquistions of sea ice zo
 #### Application
 - Monitoring sea ice, oil spills, marine winds, waves & currents, land-use change, land deformation among others, and to respond to emergencies such as floods and earthquakes.
 
-#### Resolution
+#### Spatial Resolution
 High - 10m, Medium - 40m
 
 #### Temporal availability
@@ -24,7 +24,8 @@ October 2014- ongoing
 {{% notice style="warning" title="Warining"%}}
 On December 23, 2021, one of the two satellites - Sentinel-1B - encountered an anomaly of the power unit, causing SAR functionality to be lost, and the satellite will be intentionally deorbited in the future.ESA also plans to launch Sentinel-1C in the second quarter of 2023, a process typically followed by 3-6 months of the calibration process. Thus, between December 23, 2021 and the launch of a new satellite, only data from Sentinel-1A is available, which means some areas lost coverage completely, and many others have longer revisit times. {{% /notice %}}
 
-#### Frequency
+#### Revisit time
+
 6 days repeat cycle 
 
 
@@ -58,10 +59,20 @@ SM, IW and EW products are available in single (HH or VV) or dual polarisation (
 - **EW mode is primarily used for wide area coastal monitoring including ship traffic, oil spill and sea-ice monitoring.** 
 - **SM mode is only used for small islands and on request for extraordinary events such as emergency management.**
 
+#### Sentinel-1 Toolbox 
+The Sentinel-1 Toolbox is being developed for ESA consists of a collection of processing tools, data product readers and writers and a display and analysis application to support the large archive of data from ESA SAR missions including Sentinel-1, ERS-1 & 2 and ENVISAT, as well as third party SAR data from ALOS PALSAR, TerraSAR-X, COSMO-SkyMed and RADARSAT-2. The Toolbox includes tools for calibration, speckle filtering, coregistration, orthorectification, mosaicking, data conversion, polarimetry and interferometry.
+
+The common pre-process steps for sentinel-1 are
+
+1. Thermal noise removal
+2. Radiometric calibration
+3. Terrain correction using SRTM 30 or ASTER DEM for areas greater than 60 degrees latitude, where SRTM is not available. The final terrain-corrected values are converted to decibels via log scaling (10*log10(x)).
+
+
 ## Available data
-- [Earth-Engine](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD) Data Catalog
+- [Earth-Engine](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD) 
 - [Alaska-Satellite-Facility](https://asf.alaska.edu/datasets/daac/sentinel-1/)
 - [Sentinel-hub](https://www.sentinel-hub.com/)
-
-
+- [Sentinels Scientific Data Hub](https://dataspace.copernicus.eu/)
+- Varuna AWS
 
