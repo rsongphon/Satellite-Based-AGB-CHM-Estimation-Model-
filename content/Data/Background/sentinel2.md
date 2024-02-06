@@ -45,9 +45,6 @@ SENTINEL-2 carries an optical instrument payload that samples 13 spectral bands:
 |QA60|		| 60 meters|		|Cloud mask|
 
 
-#### Spatial Resolution
-
-
 
 #### Temporal availability
 November 2015 - ongoing
