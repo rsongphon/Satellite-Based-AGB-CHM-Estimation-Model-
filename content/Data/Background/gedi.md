@@ -267,6 +267,13 @@ return will be divided by the area for the total return waveform to produce the 
 This provides an estimate for the relative minimum percentage of the return that needs to be present
 in the ground return for it to be detected.
 
+## GEDI L2A Canopy Height
+
+Simulated GEDI waveforms are processed to GEDI02_A equivalent relative height (RH) metrics, which are defined as the percentage of the received laser waveform intensity that is less than a given height, where height is computed relative to the elevation of the lowest mode in the waveform
+
+![gedil2a](/gedil2a.png)
+
+>Figure : Relative height (RH) metrics were calculated as the height relative to ground elevation under which a certain percentage of waveform energy has been returned. RH50, for example, is the height relative to the ground elevation below which 50% of waveform energy has been returned.
 
 ## GEDI L4A Footprint Level Aboveground Biomass
 
@@ -275,6 +282,14 @@ Global Ecosystem Dynamics Investigation (GEDI) Level 4A (L4A) contains  predicti
 **AGBD was derived from parametric models that relate simulated GEDI Level 2A (L2A) waveform relative height (RH) metrics to field plot estimates of AGBD.**
 
 Height metrics from simulated waveforms associated with field estimates of AGBD from multiple regions and plant functional types (PFTs) were compiled to generate a calibration dataset for models representing the combinations of world regions and PFTs (i.e., deciduous broadleaf trees, evergreen broadleaf trees, evergreen needleleaf trees, deciduous needleleaf trees, and the combination of grasslands, shrubs, and woodlands). 
+
+The GEDI approach to developing footprint AGBD models considers multiple candidates stratified by world region and PFT with different functional forms. The models were developed using a quality-filtered calibration dataset that contains 8,587 simulated waveforms in 21 countries. These data were contributed by numerous researchers and standardized into the GEDI FSBD, which is a living data archive that grows over time as new datasets are assimilated and improvements are made to existing records.
+
+The GEDI04_A models are stratified by world region and PFT . Important regions are under-represented in the GEDI FSBD, including the forests of continental Asia, the evergreen broadleaf forests throughout the islands of Southeast Asia and north of Australia, and the worldwide distribution of savannas and deciduous tropical forests.
+
+![pft](/pft.png)
+
+>Figure : The GEDI04_A global stratification of plant functional types (PFT) (A) and world region (B) used to produce GEDI footprint AGBD models. The box inset is the GEDI observation domain of 51.6 degrees N to S latitude. PFT: DBT (deciduous broadleaf trees), DNT (deciduous needleleaf trees), EBT (evergreen broadleaf trees), ENT (evergreen needleleaf trees), GSW (grasses, shrubs, and woodlands). Regions: Af (Africa), Au (Australia and Oceania), Eu (Europe), N-Am (North America north of southern Mexico), N-As (North Asia), S-Am (South America, Central America, and southern Mexico, and the Caribbean), S-As (South Asia).
 
 For each of the eight beams, additional data are reported with the AGBD estimates, including the associated uncertainty metrics, quality flags, model inputs, and other information about the GEDI L2A waveform for this selected algorithm setting group.
 
