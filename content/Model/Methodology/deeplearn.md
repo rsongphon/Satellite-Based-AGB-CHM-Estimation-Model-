@@ -76,6 +76,182 @@ The model has approximately 17 million adjustable parameters.
 
 By this development The U-Net model has been applied to satellite image data, consisting of data from Sentinel-2 satellites, 12 bands, and Sentinel-1, 2 bands. The model learns and extracts data characteristics through each image point stored in the images and GEDI data serve as ground truth of the sentinel-1 and sentinel-2 predictr variables.
 
+## Implementation
+
+Pytorch implementation of modify UNET
+
+```
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+```
+
+We start by creating sub-component of UNET
+
+First, create component in upsample path. For each level, there are convolution follow by BatchNormalization then appy ReLU activation function , repeat two times. We defind as  DoubleConv class.
+
+
+```
+class DoubleConv(nn.Module):
+    """(convolution => [BN] => ReLU) * 2"""
+
+    def __init__(self, in_channels, out_channels, mid_channels=None):
+        super().__init__()
+        if not mid_channels:
+            mid_channels = out_channels
+        self.double_conv = nn.Sequential(
+            nn.Conv2d(in_channels, mid_channels, kernel_size=3, padding=1, bias=False),
+            nn.BatchNorm2d(mid_channels),
+            nn.ReLU(inplace=True),
+            nn.Conv2d(mid_channels, out_channels, kernel_size=3, padding=1, bias=False),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(inplace=True)
+        )
+
+    def forward(self, x):
+        return self.double_conv(x)
+
+
+```
+
+After each level in downsample path finished DoubleConv to extract feature, we process to downsample by using maxpooling follow by DoubleConv immediately. define as Down class.
+
+```
+class Down(nn.Module):
+    """Downscaling with maxpool then double conv"""
+
+    def __init__(self, in_channels, out_channels):
+        super().__init__()
+        self.maxpool_conv = nn.Sequential(
+            nn.MaxPool2d(2),
+            DoubleConv(in_channels, out_channels)
+        )
+
+    def forward(self, x):
+        return self.maxpool_conv(x)
+
+```
+
+For upsample path , the process of convolution -> BatchNormalization -> ReLU  are the same as dowmsampl path. we reuse DoubleConv class. also for each level of up sample path, a concatenation with the layer in the same level in downsample path is require so we need extra padding.
+
+We define upsample component as Up Class. The process in this class is upsample the input -> padding so data can concatenate with downsample input in the same level -> 2x  convolution -> BatchNormalization -> ReLU 
+
+```
+class Up(nn.Module):
+    """Upscaling then double conv"""
+
+    def __init__(self, in_channels, out_channels, bilinear=True):
+        super().__init__()
+
+        # if bilinear, use the normal convolutions to reduce the number of channels
+        if bilinear:
+            self.up = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
+            self.conv = DoubleConv(in_channels, out_channels, in_channels // 2)
+        else:
+            self.up = nn.ConvTranspose2d(in_channels, in_channels // 2, kernel_size=2, stride=2)
+            self.conv = DoubleConv(in_channels, out_channels)
+
+    def forward(self, x1, x2):
+        # Same dimension
+        x1 = self.up(x1)
+        diffY = x2.size()[2] - x1.size()[2]
+        diffX = x2.size()[3] - x1.size()[3]
+
+        x1 = F.pad(x1, [diffX // 2, diffX - diffX // 2,
+                        diffY // 2, diffY - diffY // 2])
+        x = torch.cat([x2, x1], dim=1)
+        return self.conv(x)
+
+```
+
+For output layer , since we need to estimate uncertainty. The output will have 2 layer
+
+- Output prediction : using only 1x1 convolution to produce regression output
+
+```
+class OutMeanConv(nn.Module):
+    def __init__(self, in_channels, out_channels):
+        super(OutMeanConv, self).__init__()
+        self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=1)
+
+    def forward(self, x):
+        return self.conv(x)
+```
+- Variance : use 1x1 convolution and softpuls activation function to keep value positive
+
+```
+class OutStdConv(nn.Module):
+    def __init__(self, in_channels, out_channels):
+        super(OutStdConv, self).__init__()
+        self.out = nn.Sequential(
+            nn.Conv2d(in_channels, out_channels, kernel_size=1),
+            nn.Softplus()
+        )
+
+    def forward(self, x):
+        return self.out(x)
+```
+
+We define the modify U-NET as we describe earlier. First we import the component we just create.
+```
+from .unet_parts import *
+import torch
+
+```
+
+Then we  assembly the parts together  to form the complete network
+**don't forget that the output layer mean and variance output**
+
+```
+class UNet(nn.Module):
+    def __init__(self, n_channels, bilinear=False):
+        super(UNet, self).__init__()
+        self.n_channels = n_channels
+        self.bilinear = bilinear
+
+        self.inc = (DoubleConv(n_channels, 64))
+        self.down1 = (Down(64, 128))
+        self.down2 = (Down(128, 256))
+        self.down3 = (Down(256, 512))
+        factor = 2 if bilinear else 1
+        self.down4 = (Down(512, 1024 // factor))
+        self.up1 = (Up(1024, 512 // factor, bilinear))
+        self.up2 = (Up(512, 256 // factor, bilinear))
+        self.up3 = (Up(256, 128 // factor, bilinear))
+        self.up4 = (Up(128, 64 // factor, bilinear))
+        self.meanlayer = (OutMeanConv(32 , 1)) # Mean Pixel-wise Regression
+        self.stdlayer = (OutStdConv(32 , 1)) # Standard Deviation
+
+    def forward(self, x):
+        x1 = self.inc(x)
+        x2 = self.down1(x1)
+        x3 = self.down2(x2)
+        x4 = self.down3(x3)
+        x5 = self.down4(x4)
+        x = self.up1(x5, x4)
+        x = self.up2(x, x3)
+        x = self.up3(x, x2)
+        shared = self.up4(x, x1)
+        mean = self.meanlayer(shared)
+        std = self.stdlayer(shared)
+        #return torch.distributions.Normal(mean, std)
+        return mean , std
+
+    def use_checkpointing(self):
+        self.inc = torch.utils.checkpoint(self.inc)
+        self.down1 = torch.utils.checkpoint(self.down1)
+        self.down2 = torch.utils.checkpoint(self.down2)
+        self.down3 = torch.utils.checkpoint(self.down3)
+        self.down4 = torch.utils.checkpoint(self.down4)
+        self.up1 = torch.utils.checkpoint(self.up1)
+        self.up2 = torch.utils.checkpoint(self.up2)
+        self.up3 = torch.utils.checkpoint(self.up3)
+        self.up4 = torch.utils.checkpoint(self.up4)
+        self.outc = torch.utils.checkpoint(self.outc)
+
+```
+
 ## Model training procedures
 
 U-Net model with satellite image data was develop using deep learning sparse supervision approach to learn parameters and predict ABG results.

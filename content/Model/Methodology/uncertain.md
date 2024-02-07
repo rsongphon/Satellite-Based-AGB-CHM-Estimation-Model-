@@ -53,7 +53,7 @@ Because the noise remain inside the dataset, adding more data has no effect. Dat
 
 2. **Epistemic Uncertainty** : Model Uncertainty. This type of uncertainty arises from the lack of knowledge or ambiguity within the model itself. Epistemic uncertainty estimation focuses on estimating the uncertainty in the model's parameters or structure. Examples of epistemic uncertainty include model uncertainty when the model encounters novel or out-of-distribution data.
 
-**Can be reduced with more data or improved model architecture.**
+**Model uncertainty can be reduced with more data or improved model architecture.**
 
 ![modeluncer](/modeluncer.png?height=250px)
 > Figure : Example of epistemic uncertainty, model lack the knowledge of the data in some region, causing ambiguity in model parameter. training different model produce different result in these region. Adding or augment data  mitigate this type uncertainty.
