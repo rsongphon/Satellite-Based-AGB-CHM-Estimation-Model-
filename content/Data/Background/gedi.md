@@ -297,7 +297,7 @@ Model inputs include the scaled and transformed GEDI L2A RH metrics, footprint g
 
 ![gedil4a](/gedil4a.png?width=600px)
 
-Example subset of aboveground biomass density (AGBD; Mg ha-1) predictions from the GEDI Level-4A footprint product over Northern California, U.S., spanning April to July 2019. GEDI footprints are spaced 60m along-track and 600m across-track.
+>Example subset of aboveground biomass density (AGBD; Mg/ha-1) predictions from the GEDI Level-4A footprint product over Northern California, U.S., spanning April to July 2019. GEDI footprints are spaced 60m along-track and 600m across-track.
 
 ### GEDI data format
 

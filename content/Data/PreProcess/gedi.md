@@ -34,6 +34,7 @@ After filter out bad quality data. Convert HDF5 or .h5 format data to raster or 
 Then, GEDI data is obtained in the form of raster data with a spatial resolution of 25 meters according to the diameter of the data footprint. Example are show below.
 
 ![footprint25](/footprint25.png)
+> Example of GEDI raster, 25 m spatial resolution.
 
 Because the GEDI data has a horizontal geographic position accuracy of +-10 meters, errors may occur if the data is directly used with other earth observation data such as Sentinel-1 and Sentinel-2.
 
@@ -41,7 +42,8 @@ Aggregation is use to improve horizontal geolocation accuracy to data before imp
 
 The procedures is done by calculating the average value of GEDI data that have more than 1 sample within the target pixel size of 50 m. Result example are show below.
 
-![footprint25](/footprint50.png)
+![footprint50](/footprint50.png)
+> Example of GEDI raster, 50 m spatial resolution.
 
 All GEDI data obtained will be data from 2020-11-01 to 2021-04-30 based on Sentinel-1 and Sentinel-2 input data.
 
