@@ -58,6 +58,12 @@ Because the noise remain inside the dataset, adding more data has no effect. Dat
 ![modeluncer](/modeluncer.png?height=250px)
 > Figure : Example of epistemic uncertainty, model lack the knowledge of the data in some region, causing ambiguity in model parameter. training different model produce different result in these region. Adding or augment data  mitigate this type uncertainty.
 
+GEDI data is good exaple of data that cause model uncertainty, since the beam transect of the satellite is fixed and data in earth surface is sparse. It is impossible for the model to have knowledge of every pixel in target area. Hence model uncertainty need to be estimate.
+
+![gediuncer](/gediuncer.png?height=500px)
+
+> Figure : 6 month period GEDI footprint between 11/2021 to 04/2022, show sparse coverage in Thailand
+
 #### Estimating Uncertainty
 
 There are several methods for estimating uncertainty in CNNs. Some common approaches include:
