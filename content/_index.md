@@ -10,7 +10,7 @@ date = 2024-02-02T13:53:11+07:00
 
 This project is an UNET probabilistic deep learning model for estimating forest structure data such as canopy height/above ground biomass from satellite-based data such as sentinel 1 , sentinel 2 and GEDI data. 
 
-Here you can find all relevant information about this project.
+Here you can find all relevant information about this project in this [repository](https://gitlab.com/cloud_arv/agritech/varuna-ml/unet_canopyheight_estimation).
 
 -----------------
 
