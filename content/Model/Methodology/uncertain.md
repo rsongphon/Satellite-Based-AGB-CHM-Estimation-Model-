@@ -116,4 +116,4 @@ After that, uncertainty is calculate by Total Variance equation, which is a comb
 > Total Variance Equation : Epistemic (terms 1 and 2)  + Aleatoric Uncertainty (term 3) Uncertainty
 
 ![inferenceconcept](/inferenceconcept.png)
-> Figure : Inference flow of the ensemble model
+> Figure : Inference flow of the ensemble model. 

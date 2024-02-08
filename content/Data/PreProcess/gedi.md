@@ -15,9 +15,12 @@ Because GEDI images are data obtained from reflectance of Earth's surface to the
 Data that does not meet the quality criteria. are follows:
 
 1. Data not meeting the quality requirement of L4 level : *parameter: ((agbd_se/agbd) x 100) > 50*
+
 2. Unreliable data with a relative standard error in AGB exceeding 50% : *parameter: ((agbd_se/agbd) x 100) > 50* 
+
 3. Data within sloped terrain areas exceeding 30% 
 - determined using NASA's Shuttle Radar Topography Mission (SRTM) Digital Elevation Model (DEM) for slope calculations 
+
 4. Data sourced from regions beyond the forested areas using WorldCover 2021 data from ESA, categorized into various types:
 - Built-up : Class 50 
 - Sparse vegetation : Class 60
@@ -25,8 +28,9 @@ Data that does not meet the quality criteria. are follows:
 - Permanent water bodies : : Class 80
 - Herbaceous wetland : Class 90
 - Moss and lichen  : Class 10 
-5. Data in areas with a degraded forest landscape or sparse vegetation using EO tree cover data from Landsat satellites in 2000 and 2010 from NASA and filtering out areas with less than 30%
-forest cover,
+
+5. Data in areas with a degraded forest landscape or sparse vegetation using EO tree cover data from Landsat satellites in 2000 and 2010 from NASA and filtering out areas with less than 30% forest cover,
+
 6. Data in the area which has NDVI lower than 0.3 
 
 After filter out bad quality data. Convert HDF5 or .h5 format data to raster or grid data. (Rasterization) by giving the coordinates of each point as the center point (centroid) of the image pixel. 
