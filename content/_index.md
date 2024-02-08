@@ -45,7 +45,7 @@ It will guide you from background and details literature , methodology such as
 -----------------
 
 ## User 
-- [Prediction](/Prediction/)  Section will walk through step-by-step how to use model to produce outcome
-- [Application](/Application/)  Section descibe how to apply the output prediction and get correct result
+- [Prediction](/model/tutorials/prediction/)  Section will walk through step-by-step how to use model to produce outcome.
+- [Application](/Application/)  Section descibe how to interpret the output prediction and get correct result.
 
 -----------------
