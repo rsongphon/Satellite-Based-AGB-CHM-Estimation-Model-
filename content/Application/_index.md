@@ -70,3 +70,15 @@ Observe that spatial resolution has effect on aboveground biomass accuracy, Best
 ![large](/large.png)
 
 - On the other hand, larger project area along with variance consideration. Provide more accuracy and trustworthy result.
+
+## Example Usage
+
+- Estimate project area larger than spatial resolution is not a problem, you can calculate AGB in each pixel by multiiply with area in eac pixel as describe in provious section and use zonal stat function to calculate total AGB over your polygon target.
+
+![gooduse](/gooduse.png?width=200px)
+> Figure : Good practice to use project size larger than spatial resolution.
+
+- On the other hand, small project area that is less than spatial resolution. You cannot calculate AGB since it accuracy will be drop.
+
+![baduse](/baduse.png?width=200px)
+> Figure : If the target are is too small, AGB estimation will not provide useful information.

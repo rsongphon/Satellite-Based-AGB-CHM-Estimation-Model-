@@ -144,6 +144,22 @@ optional arguments:
 - After model finished training, model's best weight (lowest validation error) is locate at path specify in `--out_dir` optinal argument. Along with log and test result
 
 
+{{% notice style="tip" title="Tip"%}}
+If you don't want to pass input,labe,checkpoint directory path as argument everytime. You can set as default parameter in src/utils/parset.py {{% /notice %}}
+
+In `parser.py` locate 3 parser argument to set default path.
+
+```
+
+
+parser.add_argument("--all_checkpoint_dir", required = True, help="all_checkpoint directory")
+
+#dataset params
+parser.add_argument("--train_input_data_dir", required = True , help="Training input data directory with folder train/test/val.")
+parser.add_argument("--train_label_data_dir", required = True , help="Training label data directory with folder train/test/val.")
+
+```
+
 ##### Training from pre-trained weight
 
 - use keyword `resume` to argument `--train_mode`  and specify model checkpoint path with  argument `--model_weights_path` 
