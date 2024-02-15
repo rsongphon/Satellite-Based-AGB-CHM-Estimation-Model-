@@ -26,11 +26,11 @@ Source code available [here](https://gitlab.com/cloud_arv/agritech/varuna-ml/une
 
 Path : varuna-data-nonprod-analytic/biomass-estimation-project/vm-backup/AGB_model_data/ensemble_final_output
 
-- Ensemble model checkpoints are locate at [Varuna GCS](varuna-data-nonprod-analytic/biomass-estimation-project/vm-backup/AGB_model_data/best_checkpoint/ensem1)
+- Ensemble model checkpoints are locate at [Varuna GCS](https://console.cloud.google.com/storage/browser/varuna-data-nonprod-analytic/biomass-estimation-project/vm-backup/AGB_model_data/best_checkpoint/ensem1?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&project=varuna-th-dt-dp-nonprod&prefix=&forceOnObjectsSortingFiltering=false)
 
 Path : varuna-data-nonprod-analytic/biomass-estimation-project/vm-backup/AGB_model_data/best_checkpoint/ensem1
 
-- Sampling training data (train/test/val) are locate at [Varuna GCS](varuna-data-nonprod-analytic/biomass-estimation-project/vm-backup/AGB_model_data/train_data) 
+- Sampling training data (train/test/val) are locate at [Varuna GCS](https://console.cloud.google.com/storage/browser/varuna-data-nonprod-analytic/biomass-estimation-project/vm-backup/AGB_model_data/train_data?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))&project=varuna-th-dt-dp-nonprod&prefix=&forceOnObjectsSortingFiltering=false) 
 
 Path : varuna-data-nonprod-analytic/biomass-estimation-project/vm-backup/AGB_model_data/train_data
 
