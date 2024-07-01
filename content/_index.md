@@ -5,7 +5,7 @@ date = 2024-02-02T13:53:11+07:00
 
 ## Overview. 
 
-![concept](https://github.com/rsongphon/Satellite-Based-AGB-CHM-Estimation-Model-/tree/master/static/concept.png)
+![concept](concept.png)
 
 
 This project is an UNET probabilistic deep learning model for estimating forest structure data such as canopy height/above ground biomass from satellite-based data such as sentinel 1 , sentinel 2 and GEDI data. 
