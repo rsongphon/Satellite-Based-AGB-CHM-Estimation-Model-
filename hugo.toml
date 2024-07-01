@@ -1,5 +1,5 @@
 baseURL = "https://rsongphon.github.io/"
-#relativeURLs = true
+relativeURLs = true
 languageCode = 'en-us'
 title = 'Satellite-Based AGB/CHM Estimation Model​'
 
