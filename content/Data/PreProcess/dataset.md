@@ -135,7 +135,7 @@ Start by defining the sampling area (Window sampling) by selecting an area of 24
 
 split the sampling into 3 sets of data: 85% training set data, 15% validation data set for evaluating the accuracy of the model during learning, and 15% test set data for evaluating the model accuracy. after learning is complete, divided from 15% of the validation set.
 
-![sampling](/sampling.png?height=500px)
+![sampling](sampling.png?height=500px)
 
 However, the random selection of the three data sets did not have any form of random selection position. But the distribution must be taken into account. Randomly selected with equal probability.
 

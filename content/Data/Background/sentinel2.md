@@ -67,7 +67,7 @@ SENTINEL-2 products available for Users are listed in the product types tables.
 |Level-1C|Top-of-atmosphere reflectances in cartographic geometry|All Users|Systematic generation and online distribution|
 |Level-2A|Atmospherically corrected Surface Reflectances in cartographic geometry|All Users	|Systematic generation and online distribution|
 
-![sen2product](/sen2product.png)
+![sen2product](sen2product.png)
 
 {{% notice style="Info" title="Info"%}}
 Only the Level-1C and Level-2A products are released to Users.
@@ -80,35 +80,35 @@ We use band combinations to better understand the features in imagery. The way w
 By using band combinations, we can extract specific information from an image. For example, there are band combinations that highlight geologic, agricultural, or vegetation features in an image.
 
 ##### Natural Color (B4, B3, B2)
-![sen2nat](/sen2nat.jpeg)
+![sen2nat](sen2nat.jpeg)
 The natural color band combination uses the red (B4), green (B3), and blue (B2) channels. Its purpose is to display imagery the same way our eyes see the world. Just like how we see, healthy vegetation is green. Next, urban features often appear white and grey. Finally, water is a shade of dark blue depending on how clean it is.
 
 ##### Color Infrared (B8, B4, B3)
-![sen2col](/sen2col.jpeg)
+![sen2col](sen2col.jpeg)
 The color infrared band combination is meant to emphasize healthy and unhealthy vegetation. By using the near-infrared (B8) band, it’s especially good at reflecting chlorophyll. This is why in a color infrared image, denser vegetation is red. But urban areas are white.
 
 ##### Short-Wave Infrared (B12, B8A, B4)
-![sen2short](/sen2short.jpeg)
+![sen2short](sen2short.jpeg)
 The short-wave infrared band combination uses SWIR (B12), NIR (B8A), and red (B4). This composite shows vegetation in various shades of green. In general, darker shades of green indicate denser vegetation. But brown is indicative of bare soil and built-up areas.
 
 #### Agriculture (B11, B8, B2)
-![sen2algri](/sen2algri.jpeg)
+![sen2algri](sen2algri.jpeg)
 The agriculture band combination uses SWIR-1 (B11), near-infrared (B8), and blue (B2). It’s mostly used to monitor the health of crops because of how it uses short-wave and near-infrared. Both these bands are particularly good at highlighting dense vegetation that appears as dark green.
 
 #### Geology (B12, B11, B2)
-![sen2geo](/sen2geo.jpeg)
+![sen2geo](sen2geo.jpeg)
 The geology band combination is a neat application for finding geological features. This includes faults, lithology, and geological formations. By leveraging the SWIR-2 (B12), SWIR-1 (B11), and blue (B2) bands, geologists tend to use this Sentinel band combination for their analysis.
 
 #### Bathymetric (B4, B3, B1)
-![sen2bathy](/sen2bathy.jpeg)
+![sen2bathy](sen2bathy.jpeg)
 As the name implies, the bathymetric band combination is good for coastal studies. The bathymetric band combination uses the red (B4), green (B3), and coastal band (B1). Using the coastal aerosol band is good for estimating suspended sediment in the water.
 
 #### Vegetation Index (B8-B4)/(B8+B4)
-![sen2vi](/sen2vi.jpeg)
+![sen2vi](sen2vi.jpeg)
 Because near-infrared (which vegetation strongly reflects) and red light (which vegetation absorbs), the vegetation index is good for quantifying the amount of vegetation. The formula for the normalized difference vegetation index is (B8-B4)/(B8+B4). While high values suggest dense canopy, low or negative values indicate urban and water features.
 
 #### Moisture Index (B8A-B11)/(B8A+B11)
-![sen2mois](/sen2mois.jpeg)
+![sen2mois](sen2mois.jpeg)
 The moisture index is ideal for finding water stress in plants. It uses the short-wave and near-infrared to generate an index of moisture content. In general, wetter vegetation has higher values. But lower moisture index values suggest plants are under stress from insufficient moisture.
 
 

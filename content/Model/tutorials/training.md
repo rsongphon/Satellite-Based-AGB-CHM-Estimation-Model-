@@ -15,7 +15,7 @@ weight = 1
 - Multi-dimensional image numpy .npy format sampling from target raster, in this study we use [B1, B2, B3, B4, B5, B6, B7, B8, B8A, B9, B11, B12 , VV(ASC) , VH(ASC)]
 - Support any resolution , but thing to consider that larger image require more computation and time cost while smaller image will likely to lost spatial information , in this study we use 244x244 px
 
-![14layer](/14layer.png?height=400px)
+![14layer](14layer.png?height=400px)
 > Figure : Example visualization of sampling data Sentinel 2 + 1 stack image [B1, B2, B3, B4, B5, B6, B7, B8, B8A, B9, B11, B12 , VV(ASC) , VH(ASC)]
 
 #### Model Reference Ground truth
@@ -25,8 +25,8 @@ weight = 1
 - leave pixel that have no value as NAN 
 - Almost all pixel will be NAN value. That's okay because of properties of sensor, GEDI has very sparse coverage measurement.
 
-![input](/input.png?classes=inline)
-![output](/output.png?classes=inline)
+![input](input.png?classes=inline)
+![output](output.png?classes=inline)
 
 > Figure : Example visualization pair of input Sentinel 2 + 1 stack image and GEDI ground truth , although GEDI has very limited data. We will use technique call sparse-supervison to train deep learning model.
 

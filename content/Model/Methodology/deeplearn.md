@@ -7,7 +7,7 @@ weight = 3
 
 The goal of this study  is to estimate the value of aboveground biomass (ABG) using satellite remote sensing data. By develop models that imitate the allometric equations ofvarious reported studies targeting forest types in Thailand,covering all forms of allometric equations within a single model. With artificial intelligence technology. The problem can be identified by creating a regression model. That is, satellite image data is used as a predictor variable in a model. A model will inference ABG value at each pixel point, which is technically called pixel-wise regression.
 
-![pixelwise](/pixelwise.png)
+![pixelwise](pixelwise.png)
 
 > Figure : concept of pixel-wise regression
 
@@ -15,7 +15,7 @@ The goal of this study  is to estimate the value of aboveground biomass (ABG) us
 In the development, Deep learning approach was choose to develop the model. Due to the development process of the model using  traditional machine learning methods, data need to extract useful information  first, which is doing through the process of feature extraction from satellite image data. Currenty many researchs have ambiguous conclusion on which of Vegetation Index calcalate from Multispectral Sentinel-2 and SAR Sentinel-1 satellite images are related to ABG. So the correlation between forest features and the spectral characteristics of wave data obtained from remote sensing data is complex and
 not yet proven on their interrelation .
 
-![ml](/ml.png)
+![ml](ml.png)
 
 > Figure : concept of concept of machine learning approach 
 
@@ -23,29 +23,29 @@ On the other hand, Deep Learning approach can import raw data into the model as 
 
 Satellite missions such as Sentinel-2 or Landsat, which have been designed for a broader range of Earth observation needs, deliver freely accessible archives of **optical images that are not as tailored to vegetation structure,** but offer longer-term global coverage at high spatial and temporal resolution. ​
 
-![sen2](/sen2.png)
+![sen2](sen2.png)
 
 **However, estimating forest characteristics like canopy height or biomass from optical images is a challenging task, as the physical relationships be- tween spectral signatures and vertical forest structure are complex and not well under- stood**
 
 On the other hand ,LiDAR data provide direct measure vegetation structure such as height , volume ​
 
-![lidar](/lidar.png)
+![lidar](lidar.png)
 
 While airborne laser scanning (ALS) or photogrammetry campaigns provide high-resolution 3D-data from which canopy height can be derived with low error, their coverage is limited to regional scales. In contrast, spaceborne LI- DAR (like GEDI, a LIDAR sensor mounted on the International Space Station since December 2018) offers the advantage of global coverage, but with lower spatial resolution and more difficult interpretation compared to ALS data due to atmospheric noise and geolocation uncertainty 
 
 **Spaceborne LiDAR are in good position between scalability and suitability to direcly measure vegetation structure.**
 
-![lidarcompare](/lidarcompare.png)
+![lidarcompare](lidarcompare.png)
 
 NASA’s GEDI campaign, which has been collecting full-waveform LIDAR data explicitly for the purpose of measuring vertical forest structure globally, between 51.6◦ north and south. It's geographical range, and also its spatial and temporal resolutions, are limited. The mission length, initially set to two years, does not allow for continuous forest monitoring into the future. Moreover, GEDI is a sampling mission expected to cover at most 4% of the land surface. ​ ​
 
 **Due to the sensor properties, GEDI data has sparse spatial and temporal resolutions. Not cover all area of the globe**
 
-![gediglobe](/gediglobe.png)
+![gediglobe](gediglobe.png)
 
 **Using only data from multispectral imagery or radar imagery may not be sufficient for model development.** But missions such as Sentinel-2 and Sentinel-1 have been extensively reported for their potential in building models to estimate AGB density value. Although both datasets do not directly assess the physical structure of forests, these two satellites have a high spatial-resolution and extensive coverage of the earth's surface with higher measurement frequency. Therefore, **Sensor fusion between GEDI and multi-spectral optical imagery has the potential to overcome the limitations of each individual data source.**
 
-![modelconcept](/modelconcept.png)
+![modelconcept](modelconcept.png)
 
 >Figure : Sparse-supervision model concept of the project.
 
@@ -71,7 +71,7 @@ In the final level, aboveground biomass data was decode from a 1x1 convolution k
 
 The model has approximately 17 million adjustable parameters.
 
-![unet](/unet.png)
+![unet](unet.png)
 > Figure : Modify U-Net Model architecture, note that varince in output layer will be explian in uncetainty estimnation section
 
 By this development The U-Net model has been applied to satellite image data, consisting of data from Sentinel-2 satellites, 12 bands, and Sentinel-1, 2 bands. The model learns and extracts data characteristics through each image point stored in the images and GEDI data serve as ground truth of the sentinel-1 and sentinel-2 predictr variables.
@@ -263,14 +263,14 @@ was used to minimize the loss function during the training.
 
 The data was divided into 32 batches and the learning rate size was adaptively adjusted using Cyclical "Triangular2" scheduling. This technique helps the parameters get closer to the optimal point and avoids the model parameters from convergence.
 
-![triangular](/triangular.png?height=250px)
+![triangular](triangular.png?height=250px)
 > Figure: pattern of Cyclical "Triangular2"  learning rate scheduling.
 
 The learning rate began at 0.0000001 and reached a maximum of 0.1.
 
 The models were trained for 100 epochs, but Early Stopping technique was applied when no significant improvement was observed in the validation accuracy.
 
-![modelflow](/modelflow.png)
+![modelflow](modelflow.png)
 
 > Figure: Flow of the trainging procedures of one candidate endemble model
 

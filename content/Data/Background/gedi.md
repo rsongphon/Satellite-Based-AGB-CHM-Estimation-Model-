@@ -6,7 +6,7 @@ weight = 3
 
 ##  Overview
 
-![GEDI](/GEDI.png?width=450px)
+![GEDI](GEDI.png?width=450px)
 
 
 The Global Ecosystem Dynamics Investigation (GEDI) spaceborne lidar, which produces high resolution laser ranging observations of the 3D structure of the Earth. GEDI's measurements of surface elevation and vegetation canopies allow for precise estimates of canopy height and vertical structure, facilitating research applications and policy implications that have long been anticipated by the global terrestrial ecology and carbon cycle science communities.
@@ -17,7 +17,7 @@ The physical theories, mathematical procedures and model assumptions that are us
 
 ## GEDI Product
 
-![gediproduct](/gediproduct.png?width=500px)
+![gediproduct](gediproduct.png?width=500px)
 
 #### LEVEL 1 - GEOLOCATED WAVEFORMS
 
@@ -30,7 +30,7 @@ include the corrected receive waveform, as well as the receive waveform geolocat
 #### LEVEL 2 - FOOTPRINT LEVEL CANOPY HEIGHT AND PROFILE METRICS
 
 The L2 products contain information derived from the geolocated GEDI return waveforms (Level 1 product) .The waveforms are processed to provide canopy height and profile metrics. These are values calculated directly from the waveform return for each footprint such as terrain elevation, canopy height, RH metrics and Leaf Area Index (LAI). These metrics provide easy-to-use and interpret information about the vertical distribution of the canopy material.
-![l2a](/l2a.png?height=500px)
+![l2a](l2a.png?height=500px)
 
 #### LEVEL 3 - GRIDDED CANOPY HEIGHT METRICS AND VARIABILITY
 
@@ -56,7 +56,7 @@ Level 4 products are the highest level of GEDI product and represent the output 
 
 ## GEDI Configuration
 
-![gedilidar](/GEDIlidar.png?width=650px)
+![gedilidar](GEDIlidar.png?width=650px)
 
 - The GEDI instrument consists of 3 lasers producing a total of 8 beam ground transects that
 are spaced approximately 600 m apart on the Earth’s surface in the cross-track direction relative
@@ -83,7 +83,7 @@ Geolocation of each footprint are in geolocation data groups (“geolocation” 
 
 - The waveform can have a simple (single-mode) shape similar to that of the outgoing pulse [Fig. 2(a)] or be complex and multimodal with each mode representing a reflection from an apparently-distinct surface within the laser footprint (Figure 2(b)).
 
-![gediwave](/gediwave.png?width=650px)
+![gediwave](gediwave.png?width=650px)
 
 - **Simple waveforms are typical in ocean or bare-ground regions.**
 
@@ -210,7 +210,7 @@ This region is then extended immediately above and below by the number of sample
 ancillary/searchsize, modified to not exceed waveform record length as necessary. Search_start and search_end record the waveform sample numbers between which the algorithm will search
 for reflected signal (Figure 4),
 
-![gedisearch](/gedisearch.png?width=600px)
+![gedisearch](gedisearch.png?width=600px)
 
 *Parameters: Botloc, botloc_amp*
 
@@ -228,7 +228,7 @@ search_end. Toploc defines the highest detected return. For example, in a vegeta
 correspond (once geolocated) to the canopy top. Parameters are determined from the version of
 rxwaveform denoised by convolution with a gaussian of width smoothwidth.
 
-![gedivisual](/gedivisual.png?width=600px)
+![gedivisual](gedivisual.png?width=600px)
 
 #### Detect modes within waveform
 
@@ -249,7 +249,7 @@ modes may correspond to noise.
 the subsequent mode/2.
 
 
-![fig5](/fig5.png?width=600px)
+![fig5](fig5.png?width=600px)
 
 
 #### Waveform Sensitivity
@@ -271,7 +271,7 @@ in the ground return for it to be detected.
 
 Simulated GEDI waveforms are processed to GEDI02_A equivalent relative height (RH) metrics, which are defined as the percentage of the received laser waveform intensity that is less than a given height, where height is computed relative to the elevation of the lowest mode in the waveform
 
-![gedil2a](/gedil2a.png)
+![gedil2a](gedil2a.png)
 
 >Figure : Relative height (RH) metrics were calculated as the height relative to ground elevation under which a certain percentage of waveform energy has been returned. RH50, for example, is the height relative to the ground elevation below which 50% of waveform energy has been returned.
 
@@ -287,7 +287,7 @@ The GEDI approach to developing footprint AGBD models considers multiple candida
 
 The GEDI04_A models are stratified by world region and PFT . Important regions are under-represented in the GEDI FSBD, including the forests of continental Asia, the evergreen broadleaf forests throughout the islands of Southeast Asia and north of Australia, and the worldwide distribution of savannas and deciduous tropical forests.
 
-![pft](/pft.png)
+![pft](pft.png)
 
 >Figure : The GEDI04_A global stratification of plant functional types (PFT) (A) and world region (B) used to produce GEDI footprint AGBD models. The box inset is the GEDI observation domain of 51.6 degrees N to S latitude. PFT: DBT (deciduous broadleaf trees), DNT (deciduous needleleaf trees), EBT (evergreen broadleaf trees), ENT (evergreen needleleaf trees), GSW (grasses, shrubs, and woodlands). Regions: Af (Africa), Au (Australia and Oceania), Eu (Europe), N-Am (North America north of southern Mexico), N-As (North Asia), S-Am (South America, Central America, and southern Mexico, and the Caribbean), S-As (South Asia).
 
@@ -295,7 +295,7 @@ For each of the eight beams, additional data are reported with the AGBD estimate
 
 Model inputs include the scaled and transformed GEDI L2A RH metrics, footprint geolocation variables and land cover input data including PFTs and the world region identifiers. Additional model outputs include the AGBD predictions for each of the six GEDI L2A algorithm setting groups with AGBD in natural and transformed units and associated prediction uncertainty for each GEDI L2A algorithm setting group. 
 
-![gedil4a](/gedil4a.png?width=600px)
+![gedil4a](gedil4a.png?width=600px)
 
 >Example subset of aboveground biomass density (AGBD; Mg/ha-1) predictions from the GEDI Level-4A footprint product over Northern California, U.S., spanning April to July 2019. GEDI footprints are spaced 60m along-track and 600m across-track.
 

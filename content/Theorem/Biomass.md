@@ -20,14 +20,14 @@ weight = 3
 
 ###### Estimation of amount of the forest biomass and subsequently the amount of carbon stored in the forest is crucial in monitoring changes in carbon budget in regional but also global scale!
 
- ![biomass](/biomass2.png?height=500px)
+ ![biomass](biomass2.png?height=500px)
 
  ### Field methods for above and belowground biomass estimation
 
-![des](/destructive.png?height=200px)
+![des](destructive.png?height=200px)
 
 
-![nondes](/nondes.png?height=230px)
+![nondes](nondes.png?height=230px)
 
 (Huynh et al, 2020)
 
@@ -49,7 +49,7 @@ The study area for each forest type was selected based on the slope level of the
 2. Determining Plot grid, Plot number
 Depends on standards/tools use in the system, for example : 100x100m plant with 10x10m subplot align with satellite imagery.
 
-![plotfield](/plotfield.png?height=230px)
+![plotfield](plotfield.png?height=230px)
 
 3. Non-destructive measuring information of the trees in the sample plots
 collect information such as
@@ -60,7 +60,7 @@ collect information such as
 
 4. Calculate the dry weight or above-ground biomass of a tree. with allometry equations
 - The allometry equations vary for each species of the tree , example according to T-VER-S-TOOL-01-01 are show in example below
-![allo1](/allometric1.png?width=500px)
-![allo1](/allometric2.png?width=500px)
-![allo3](/allometric3.png?width=500px)
-![allo4](/allometric4.png?width=500px)
+![allo1](allometric1.png?width=500px)
+![allo1](allometric2.png?width=500px)
+![allo3](allometric3.png?width=500px)
+![allo4](allometric4.png?width=500px)

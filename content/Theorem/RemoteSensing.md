@@ -18,7 +18,7 @@ Instrumentation is needed to detect all other forms of electromagnetic energy.
 
 Diagram of the Electromagnetic Spectrum. Credit: NASA Science.
 
-![ems](/ems.jpeg)
+![ems](ems.jpeg)
 Diagram of the Electromagnetic Spectrum. Credit: NASA Science.
 
 For more information on the electromagnetic spectrum, with companion videos, view [NASA's Tour of the Electromagnetic Spectrum.](https://science.nasa.gov/ems/l) 
@@ -29,7 +29,7 @@ Sensors, or instruments, aboard satellites and aircraft use the Sun as a source 
 - **Sensors that use natural energy from the Sun are called passive sensors**
 - **Sensors that provide their own source of energy are called active sensors.**
 
-![activepassive](/activepassive.png)
+![activepassive](activepassive.png)
 Diagram of a passive sensor versus an active sensor. Credit: NASA Applied Sciences Remote Sensing Training Program.
 
 #### Passive sensor
@@ -72,18 +72,18 @@ Resolution can vary depending on the satellite’s orbit and sensor design. Ther
 #### Radiometric resolution 
 the amount of information in each pixel, that is, the number of bits representing the energy recorded. Each bit records an exponent of power 2. For example, an 8 bit resolution is 2^8, which indicates that the sensor has 256 potential digital values (0-255) to store information. Thus, the higher the radiometric resolution, the more values are available to store information, providing better discrimination between even the slightest differences in energy. For example, when assessing water quality, radiometric resolution is necessary to distinguish between subtle differences in ocean color.
 
-![radiometric](/radiometric.png)
+![radiometric](radiometric.png)
 
 #### Spatial resolution 
 defined by the size of each pixel within a digital image and the area on Earth’s surface represented by that pixel. For example, the majority of the bands observed by the Moderate Resolution Imaging Spectroradiometer (MODIS) have a spatial resolution of 1km; each pixel represents a 1 km x 1km area on the ground. 
 
-![spatialres](/spatialres.jpeg)
+![spatialres](spatialres.jpeg)
 Landsat 8 image , illustrating the difference in pixel resolution. Credit: NASA Earth Observatory.
 
 #### Spectral resolution
 The ability of a sensor to discern finer wavelengths, that is, having more and narrower bands. Many sensors are considered to be multispectral, meaning they have 3-10 bands. Some sensors have hundreds to even thousands of bands and are considered to be hyperspectral. The narrower the range of wavelengths for a given band, the finer the spectral resolution. 
 
-![avcubebig](/avcubebig.gif)
+![avcubebig](avcubebig.gif)
 The sides of the cube are slices showing the edges of the top in all 224 of the AVIRIS spectral channels.
 
 #### Temporal resolution 

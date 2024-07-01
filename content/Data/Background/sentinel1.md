@@ -41,7 +41,7 @@ SENTINEL-1 data products distributed by ESA include
 
 The SENTINEL-1 Synthetic Aperture Radar (SAR) instrument may acquire data in four exclusive modes:
 
-![sen1mode](/sen1mode.jpeg)
+![sen1mode](sen1mode.jpeg)
 
 - Stripmap (SM) - A standard SAR stripmap imaging mode where the ground swath is illuminated with a continuous sequence of pulses, while the antenna beam is pointing to a fixed azimuth and elevation angle.
 - Interferometric Wide swath (IW) - Data is acquired in three swaths using the Terrain Observation with Progressive Scanning SAR (TOPSAR) imaging technique. In IW mode, bursts are synchronised from pass to pass to ensure the alignment of interferometric pairs. IW is SENTINEL-1's primary operational mode over land.

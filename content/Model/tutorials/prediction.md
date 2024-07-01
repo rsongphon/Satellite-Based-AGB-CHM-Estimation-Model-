@@ -7,24 +7,24 @@ date = 2024-02-08T14:10:42+07:00
 
 Raster image can have very large spatial resolution. It is impossible to input whole raster image as an input to model because of constrain about memory and time, instead approch like split raster into sub-patch and make prediction independent together then mosiac back to original size is often use. But the problem is at the boundary of each patch will lost information of adjacent patch and cause error in convolutional operation.
 
-![error](/error1.png?height=400px)
+![error](error1.png?height=400px)
 > Figure : Example of boundary error when prediction raster image by sub-patch
 
 Another apporch that solve this problem is use **averaging sliding window technique**. We implement by make a prediction by some fixed sized window. Then step the window by the number of stride , some pixel will be overlap from previous prediction. We process by accumulate the prediction and using using extra accumulator array to count the number of redundant prediction. After prediction is finised. We then divide the accumulate prediction result with accumulator number of each pixel to get average prediction. Results mitigate the error at the boundary.
 
-![acc1](/acc1.png?width=500px)
+![acc1](acc1.png?width=500px)
 
 > Figure 1 : Initial state of output and accumulator, no prediction takes place yet.
 
-![acc2](/acc2.png?width=500px)
+![acc2](acc2.png?width=500px)
 
 > Figure 2 : First window prediction, accumulator count the number to total prediction
 
-![acc3](/acc3.png?width=500px)
+![acc3](acc3.png?width=500px)
 
 > Figure 3 : Sliding window move by stride number, some pixel make prediction agian,  accumulate the prediction and count total number of prediction.
 
-![acc4](/acc4.png?width=250px)
+![acc4](acc4.png?width=250px)
 
 > Figure 5 : By the end of operation , divide total accumulate prediction with the number of prediction to get average result.
 
@@ -78,12 +78,12 @@ optinal arguments:
 
 To produce final output of ensemble prediction. We implement methodology state in [uncertianty](/model/methodology/uncertain/) section.
 
-![inferenceconcept](/inferenceconcept.png?height=400px)
+![inferenceconcept](inferenceconcept.png?height=400px)
 > Figure : Inference flow of the ensemble model. 
 
 1. Prepare all output prediction and variance of all candidate ensemble
 
-![ensemall](/ensemall.png)
+![ensemall](ensemall.png)
 >Figure : collection of output prediction and variance of all candidate ensemble
 
 2. Stack output prediction and varaince
@@ -118,7 +118,7 @@ variances_img = np.array([rio.open(file).read() for file in variance_file])
 
 - Avarage of output can be implement be numpy.mean
 
-![mean](/mean.png)
+![mean](mean.png)
 > Output Equation : output prediction of the model , calculate by averaging each pixel for all M candidate
 
 
@@ -150,7 +150,7 @@ aleatoric_var = np.mean(variances_img, axis=0)
 
 - Pixel-wise summation epistemic and aleatoric uncertainty according to total variance formula
 
-![totalvar](/totalvar.png)
+![totalvar](totalvar.png)
 > Total Variance Equation : Epistemic (terms 1 and 2)  + Aleatoric Uncertainty (term 3) Uncertainty
 
 ```

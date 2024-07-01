@@ -6,7 +6,7 @@ weight = 2
 
 
 
-![canopy](/canopy.png)
+![canopy](canopy.png)
 - Canopy height models are a measurement of the height of trees, buildings, and other structures above the ground topography. 
 - This product is used in a variety of forestry applications including tracking vegetation and trees in a forest over time, **calculating biomass**, and estimating leaf area index.
 - A canopy height model is calculated by subtracting the digital terrain model (DTM) from the digital surface model (DSM). 

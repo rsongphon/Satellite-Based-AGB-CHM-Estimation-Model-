@@ -111,8 +111,8 @@ The script will creates:
 - Calibration plot
 - Confusion plot
 
-![confusion](/confusion.png?height=300px)
+![confusion](confusion.png?height=300px)
 > Figure : Example of confusion plot
 
-![calibration](/calibration.png?height=300px)
+![calibration](calibration.png?height=300px)
 > Figure : Example of calibration plot

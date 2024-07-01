@@ -46,7 +46,7 @@ The result pre-processing image of Sentinel1 and 2 are then stack together to se
 
 A pre-processing pipeline are show in diagram as follow.
 
-![sen1sen2pre](/sen1sen2pre.png)
+![sen1sen2pre](sen1sen2pre.png)
 
 ## Earth Engine Implementation
 
